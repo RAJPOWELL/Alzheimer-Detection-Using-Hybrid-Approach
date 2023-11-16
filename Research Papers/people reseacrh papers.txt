@@ -1,0 +1,85 @@
+kauskik 1st paper 
+Deep Learning Techniques for Early Detection of 
+Alzheimer’s Disease: A Review
+V Sanjay1 and P Swarnalatha2*
+1Research Scholar, School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, India, 
+sanjay.researcher@gmail.com
+2Associate Professor, School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, India
+name of paper in github ijeer-100425
+kaushik 2nd paper 
+Automatic Early Diagnosis of Alzheimer’s Disease
+Using 3D Deep Ensemble Approach
+AYA GAMAL 1
+, MUSTAFA ELATTAR 1,2, AND SAHAR SELIM 1,2
+1Medical Imaging and Image Processing Research Group, Center for Informatics Science, Nile University, Giza 12677, Egypt
+2School of Information Technology and Computer Science, Nile University, Giza 12677, Egypt
+Corresponding author: Aya Gamal (ay.gamal@nu.edu.eg)
+ name of paper in github :kaushik paper 2
+
+
+aravind 1st paper
+CNN Based Landmark Detection and Alzheimer’s 
+Diagnosis using Landmark Features
+Ayisha Shamna .K K
+ayishamna@gmail.com
+Cochin College of Engineering 
+and Technology, Valanchery, 
+Kerala
+Jamsheera .K
+jemseerakallingal@gmail.com
+Cochin College of Engineering 
+and Technology, Valanchery, 
+Kerala
+Shameena .PP
+shamzz89@gmail.com
+Cochin College of Engineering 
+and Technology, Valanchery, 
+Kerala
+name of paper in github v4i1-1240 in github
+aravinds 2 nd paper 
+Automated detection of Alzheimer’s Disease using
+Deep Learning in MRI
+To cite this article: P C Muhammed Raees and Vinu Thomas 2021 J. Phys.: Conf. Ser. 1921 012024
+name of paper in github aravind paper2
+
+
+raj 1st paper
+Prediction and Analysis of Alzheimer’s Disease using Deep
+Learning Algorithms
+ M Sai Teja . K Thanuja . Nadella Mani Deep . P Ravindra Reddy . O Likhith Kumar Reddy
+School of Computer Science and Engineering, REVA University, Bengaluru-560064, India
+Received: 3 April 2023 / Revised: 26 April 2023 / Accepted: 3 May 2023 
+©Milestone Research Publications, Part of CLOCKSS archiving
+name of paper in github paper-2 v212 
+rajs 2nd paper
+Classifcation and Visualization 
+of Alzheimer’s Disease using 
+Volumetric Convolutional Neural 
+Network and Transfer Learning
+KanghanOh1, Young-ChulChung2,3, KoWoon Kim4, Woo-Sung Kim2,3 & Il-SeokOh1
+name of aper in github :Classification and Visualization of Alzheimer’s Disease using Volumetric Convolutional Neural Network and Transfer Learning (1) 
+sandeep 1 st paper
+Early-Stage Alzheimer’s Disease
+Prediction Using Machine Learning
+Models
+C. Kavitha1
+*, Vinodhini Mani 1
+, S. R. Srividhya1
+, Osamah Ibrahim Khalaf 2 and
+Carlos Andrés Tavera Romero3
+ name of paper in github : Early-Stage Alzheimer's Disease Prediction Using Machine Learning Models
+sandeep 2nd paper
+Alzheimer’s Diseases Detection by Using Deep Learning Algorithms: A Mini-Review
+April 2020IEEE Access PP(99):1-1
+DOI:10.1109/ACCESS.2020.2989396
+LicenseCC BY 4.0
+Authors:
+Suhad Al-Shoukry
+Al-Furat Al-Awsat Technical University
+Taha Rassem
+Bournemouth University
+Nasrin Makbol
+Hodeidah university
+Download
+name of paper in github: sandeep paper 2
+

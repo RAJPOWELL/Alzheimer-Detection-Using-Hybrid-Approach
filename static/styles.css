@@ -17,10 +17,13 @@ h1 {
 }
 
 .paragraph {
-    font-size: 1.2rem; /* Increased font size */
-    line-height: 1.5; /* Line spacing set to 1.5 */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding: 10px; /* Add padding to create space between text and container edges */
+    width: 100%; /* Set the width of the paragraph container */
+    margin-left: 5%; /* Adjust the left margin to move the paragraph more to the left */
+    padding-right: 3cm;
 }
-
 
 .container {
     max-width: 1200px;
@@ -82,7 +85,7 @@ label[for="image"] {
     width: 12cm; /* Square with dimensions of 5cm each side */
     height: 9cm;
     border: 2px solid white;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     color: white;
     padding: 1rem;
     box-sizing: border-box;
@@ -114,7 +117,7 @@ label[for="image"]:before {
 button {
     background-color: black;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     color: white;
     padding: 0.25rem 1rem; /* Decrease button size */
     cursor: pointer;

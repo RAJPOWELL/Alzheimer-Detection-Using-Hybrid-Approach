@@ -6,14 +6,9 @@ import tensorflow_addons as tfa
 
 app = Flask(__name__)
 
-# Define custom metric function
-def f1_score(y_true, y_pred):
-    # Implementation of F1 score metric
-    pass
-
 # Load the trained model with custom metric function
 model = tf.keras.models.load_model('/home/raj/Temp/Alzheimer-Detection-Using-Hybrid-Approach/Model/alzheimer_cnn_model',
-                                   custom_objects={'f1_score': f1_score})
+                                   custom_objects={'F1Score': tfa.metrics.F1Score})
 
 # Define classes
 CLASSES = ['NonDemented', 'VeryMildDemented', 'MildDemented', 'ModerateDemented']
@@ -30,18 +25,16 @@ def predict():
     # Load the image using PIL
     img = Image.open(img_file)
     
-    # Convert the image to RGB if it has a single channel
-    # if img.mode != 'RGB':
-    #     img = img.convert('RGB')
+    # Resize the image to the required dimensions and convert to array
+    img_array = np.array(img.resize((176, 176))) / 255.0
     
-    # Resize the image to the required dimensions
-    img = img.resize((176, 176))
+    # Ensure that the image array has 3 channels (RGB)
+    if img_array.shape[-1] != 3:
+        img_array = np.expand_dims(img_array, axis=-1)  # Add channel dimension if it's missing
+        img_array = np.repeat(img_array, 3, axis=-1)    # Repeat grayscale values across channels
     
-    # Convert the image to numpy array
-    img_array = np.array(img) / 255.0  # Normalize the image
-    
-    # Add batch dimension
-    img_array = np.expand_dims(img_array, axis=0)
+    # Reshape the image array to match the expected input shape of the model
+    img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
     
     # Make prediction
     prediction = model.predict(img_array)

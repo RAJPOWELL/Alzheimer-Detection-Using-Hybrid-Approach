@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Testing App - Question</title>
+    <script>
+        // Function to redirect to the next question after 7 seconds
+        function redirectToNextQuestion() {
+            setTimeout(function() {
+                document.getElementById('answerForm').submit();
+            }, 7000);  // 7 seconds
+        }
+        // Start the timer when the page loads
+        window.onload = redirectToNextQuestion;
+    </script>
+</head>
+<body>
+    <h2>Question {{ question_number }}:</h2>
+    <p>{{ question }}</p>
+    <form id="answerForm" action="/answer" method="post">
+        <input type="text" name="answer" required>
+        <button type="submit">Submit Answer</button>
+    </form>
+</body>
+</html>

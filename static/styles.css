@@ -1,0 +1,151 @@
+body {
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+    margin-top: 1cm;
+}
+
+.paragraph {
+    font-size: 1.2rem; /* Increased font size */
+    line-height: 1.5; /* Line spacing set to 1.5 */
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between; /* Separate halves */
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100vh - 8rem); /* Adjust height based on the heading size */
+}
+
+.left-half,
+.right-half {
+    width: 50%; /* Each half takes half of the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.right-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%; /* Adjust as needed */
+    position: relative; /* Needed for absolute positioning of input */
+}
+
+input[type="file"] {
+    margin-bottom: 1rem;
+    width: 12cm; /* Square with dimensions of 5cm each side */
+    height: 9cm;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #1c293136;
+    color: #fff;
+    padding: 1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    left: calc(50% + 2cm); /* Shift 2cm right */
+    top: calc(50% - 2cm); /* Shift 2cm up */
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure input is above label */
+}
+
+label[for="image"] {
+    display: block;
+    width: 12cm; /* Square with dimensions of 5cm each side */
+    height: 9cm;
+    border: 2px solid white;
+    border-radius: 0.25rem;
+    color: white;
+    padding: 1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    line-height: 5cm; /* Center content vertically */
+    font-size: 1.25rem;
+    position: relative;
+    overflow: hidden; /* Ensure overflow is hidden */
+    z-index: 0; /* Ensure label is below input */
+}
+
+label[for="image"]:before {
+    content: "+";
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    color: #000000;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    background-color: black;
+    border: none;
+    border-radius: 0.25rem;
+    color: white;
+    padding: 0.25rem 1rem; /* Decrease button size */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 4cm; /* Set button width to 4cm */
+    margin-top: 1rem;
+    border: 2px solid white;
+    z-index: 1; /* Ensure button is above label */
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Added CSS for image preview */
+#preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 2; /* Ensure preview is above input */
+}
+
+.left-half p {
+    text-align: justify;
+    color: white;
+    padding: 0 2rem; /* Add padding for better readability */
+}

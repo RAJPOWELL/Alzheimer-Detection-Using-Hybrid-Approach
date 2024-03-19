@@ -31,8 +31,8 @@ def predict():
     img = Image.open(img_file)
     
     # Convert the image to RGB if it has a single channel
-    if img.mode != 'RGB':
-        img = img.convert('RGB')
+    # if img.mode != 'RGB':
+    #     img = img.convert('RGB')
     
     # Resize the image to the required dimensions
     img = img.resize((176, 176))

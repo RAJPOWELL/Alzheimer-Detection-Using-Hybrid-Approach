@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Test</title>
+</head>
+<body>
+    <h1>Cognitive Test</h1>
+    <form action="/questions" method="post">
+        <ul>
+            {% for question in questions %}
+                <li>
+                    <label for="answer_{{ loop.index }}">{{ question["question"] }}</label><br>
+                    <input type="text" id="answer_{{ loop.index }}" name="answer_{{ loop.index }}" required><br>
+                </li>
+            {% endfor %}
+        </ul>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

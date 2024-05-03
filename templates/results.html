@@ -3,11 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result</title>
+    <title>MRI Result</title>
+    <style>
+        /* Texture effect animation */
+        @keyframes texture {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .animated-heading {
+            background-image: linear-gradient(45deg, #3f4c6b, #606c88, #3f4c6b, #606c88);
+            background-size: 400% 400%;
+            animation: texture 10s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        /* Rest of the CSS styles remain unchanged */
+        /* ... */
+    </style>
 </head>
 <body>
-    <h2>Predicted Class:</h2>
-    <h3>{{ predicted_class }}</h3>
+    <div class="container">
+        <h1 class="animated-heading">MRI Result</h1>
+        <h2>Predicted Class: {{ predicted_class }}</h2>
+        <img src="{{ url_for('static', filename='images/' + image_filename) }}" alt="MRI Scan">
+        <p class="paragraph">
+            This is the predicted class for the MRI scan submitted. The model predicted that the MRI scan belongs to the class: <strong>{{ predicted_class }}</strong>.
+        </p>
+        <a href="/mri">Back to MRI Page</a>
+    </div>
 </body>
 </html>
-

@@ -1,0 +1,144 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(246, 247, 248);
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(0,0,0,0.9);
+    padding: 10px 0;
+}
+
+.user-info {
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+    padding-top: 14px;
+}
+
+.user-info .user-initial {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* Navigation Styles */
+.horizontal-nav {
+    text-align: center;
+    background-color:rgba(6, 17, 66, 0.26);
+    color: black;
+   
+}
+
+.horizontal-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.horizontal-nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.horizontal-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.horizontal-nav ul li a.active {
+    color: blue;
+}
+
+.horizontal-nav{
+    
+}
+
+.login {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+  }
+
+  .login:hover {
+    background-color:white;
+    color: black;
+  }
+
+/* Side Menu Styles */
+.side-menu {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+}
+
+.burger-icon {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: aliceblue;
+    margin-top: 1cm;
+}
+
+.menu-content {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border: 1px solid #ccc;
+    
+}
+
+.menu-content a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu-content a:hover {
+    color: blue;
+}
+
+/* Footer Styles */
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+

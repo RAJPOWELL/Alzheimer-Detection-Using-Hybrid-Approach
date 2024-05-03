@@ -1,79 +1,225 @@
-from flask import Flask, render_template, request, redirect, url_for
-import random
+# Import statements
+from flask import Flask, request, render_template, session, redirect, url_for, flash
+from PIL import Image
+import numpy as np
+import os
+import sqlite3
+from sqlite3 import Error
+import hashlib
+import tensorflow as tf
+import tensorflow_addons as tfa
+import functools  # Import functools for wraps decorator
 
+# Flask app setup
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # Replace with a strong, random secret key
 
-# Define question bank with 30 questions
+# Load the trained model with custom metric function
+model = tf.keras.models.load_model('/home/raj/Temp/Alzheimer-Detection-Using-Hybrid-Approach/Models/alzheimer_inception_cnn_model',
+                                   custom_objects={'F1Score': tfa.metrics.F1Score})
+
+# Define classes
+CLASSES = ['NonDemented', 'VeryMildDemented', 'MildDemented', 'ModerateDemented']
+
+# Function to create a database connection
+def create_connection(db_file):
+    """Creates a database connection to the specified file."""
+    conn = None
+    try:
+        conn = sqlite3.connect(db_file)
+        return conn
+    except Error as e:
+        print(e)
+    return conn
+
+# Function to execute a SQL query
+def execute_query(conn, sql_query):
+    """Executes a provided SQL query on the database connection."""
+    try:
+        c = conn.cursor()
+        c.execute(sql_query)
+    except Error as e:
+        print(e)
+
+# Function to hash the password securely using bcrypt
+def hash_password(password):
+    """Hashes the password using bcrypt for secure storage."""
+    return hashlib.sha256(password.encode()).hexdigest()
+
+# Function to verify password during login
+def verify_password(hashed_password, password):
+    """Verifies the provided password against the hashed password stored in the database."""
+    return hashed_password == hashlib.sha256(password.encode()).hexdigest()
+
+# Function to validate if the uploaded file is an image
+def allowed_file(filename):
+    """Checks if the filename extension corresponds to a supported image format."""
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'png', 'jpg', 'jpeg'}
+
+# Route for user signup
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        email = request.form['email']
+
+        # Hash the password securely
+        hashed_password = hash_password(password)
+
+        # Create SQLite database connection
+        conn = create_connection("alzheimer_detection.db")
+
+        if conn is not None:
+            # Insert user data into User table
+            sql_query = f"INSERT INTO User (username, password, email) VALUES ('{username}', '{hashed_password}', '{email}')"
+            execute_query(conn, sql_query)
+            conn.commit()
+            conn.close()
+            flash('Signup successful! Please log in.')
+            return redirect(url_for('login'))
+        else:
+            flash('Error! Cannot create the database connection.')
+
+    return render_template('signup.html')
+
+# Route for user login
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        # Create SQLite database connection
+        conn = create_connection("alzheimer_detection.db")
+
+        if conn is not None:
+            # Query the database for the user
+            sql_query = f"SELECT * FROM User WHERE username = '{username}'"
+            cursor = conn.cursor()
+            cursor.execute(sql_query)
+            user = cursor.fetchone()
+
+            if user and verify_password(user[2], password):
+                # User authenticated successfully
+                session['logged_in'] = True
+                session['username'] = username
+                flash('Login successful!')
+                return redirect(url_for('index'))
+            else:
+                flash('Invalid username or password. Please try again.')
+
+    return render_template('login.html')
+
+# Route for user logout
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    session.pop('username', None)
+    flash('You have been logged out.')
+    return redirect(url_for('login'))
+
+# Route for the Home Page (now the starting point)
+@app.route('/')
+def index():
+    return render_template('home.html')
+
+# Login required decorator (checks if user is logged in)
+def login_required(f):
+    @functools.wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'logged_in' not in session:
+            flash('You must be logged in to access this page.')
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+# Restrict access to MRI and Cognitive pages (use decorator)
+@app.route('/mri')
+@login_required
+def mri():
+    return render_template('mri.html')
+
+@app.route('/cognitive')
+@login_required
+def cognitive():
+    return redirect(url_for('question'))
+
+# Route for image prediction
+@app.route('/predict', methods=['POST'])
+@login_required
+def predict():
+    # Get the image file from the request
+    img_file = request.files['image']
+    
+    # Load the image using PIL
+    img = Image.open(img_file)
+    
+    # Resize the image to the required dimensions and convert to array
+    img_array = np.array(img.resize((176, 176))) / 255.0
+    
+    # Ensure that the image array has 3 channels (RGB)
+    if img_array.shape[-1] != 3:
+        img_array = np.expand_dims(img_array, axis=-1)  # Add channel dimension if it's missing
+        img_array = np.repeat(img_array, 3, axis=-1)    # Repeat grayscale values across channels
+    
+    # Reshape the image array to match the expected input shape of the model
+    img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
+    
+    # Make prediction
+    prediction = model.predict(img_array)
+    
+    # Get the predicted class
+    predicted_class = CLASSES[np.argmax(prediction)]
+    
+    # Store predicted class and image source in session
+    session['predicted_class'] = predicted_class
+    session['image_filename'] = img_file.filename
+    
+    return render_template('results.html', predicted_class=predicted_class, image_filename=img_file.filename)
+
+# Define question bank with 25 questions (including the 5 user information questions)
 question_bank = [
+    {"question": "What is your full name?", "answer": ""},
+    {"question": "What is your favorite color?", "answer": ""},
+    {"question": "Which country do you belong to?", "answer": ""},
+    {"question": "Your Year of Birth?", "answer": ""},
+    {"question": "Favorite Sport?", "answer": ""},
     {"question": "What is 2 + 2?", "answer": "4"},
     {"question": "What is the capital of France?", "answer": "Paris"},
     {"question": "Who wrote 'Romeo and Juliet'?", "answer": "Shakespeare"},
     {"question": "What is the square root of 16?", "answer": "4"},
-    {"question": "What is the chemical symbol for water?", "answer": "H2O"},
-    {"question": "What year did World War II end?", "answer": "1945"},
-    {"question": "What is the largest planet in our solar system?", "answer": "Jupiter"},
-    {"question": "Who painted the Mona Lisa?", "answer": "Leonardo da Vinci"},
-    {"question": "What is the powerhouse of the cell?", "answer": "Mitochondria"},
-    {"question": "What is the tallest mammal?", "answer": "Giraffe"},
-    {"question": "What is the chemical symbol for gold?", "answer": "Au"},
-    {"question": "Who is known as the 'Father of Computers'?", "answer": "Charles Babbage"},
-    {"question": "What is the capital of Japan?", "answer": "Tokyo"},
-    {"question": "What is the freezing point of water in Celsius?", "answer": "0"},
-    {"question": "Who discovered penicillin?", "answer": "Alexander Fleming"},
-    {"question": "What is the largest ocean on Earth?", "answer": "Pacific Ocean"},
-    {"question": "What is the formula for the area of a circle?", "answer": "πr^2"},
-    {"question": "Who developed the theory of relativity?", "answer": "Albert Einstein"},
-    {"question": "What is the chemical symbol for oxygen?", "answer": "O"},
-    {"question": "Who wrote 'To Kill a Mockingbird'?", "answer": "Harper Lee"},
-    # Add more questions here
+    {"question": "What is the chemical symbol for water?", "answer": "H2O"}
 ]
 
-# Shuffle question bank to randomize question order
-random.shuffle(question_bank)
-
-# Define variables for tracking user progress and score
-current_question_index = 0
-score = 0
-question_limit = 10
-timer_duration = 7  # Time limit for each question in seconds
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/start', methods=['POST'])
-def start_test():
-    global current_question_index, score
-    current_question_index = 0
-    score = 0
-    return redirect(url_for('question'))
-
-@app.route('/question')
+# Route for cognitive test questions
+@app.route('/questions', methods=['GET', 'POST'])
+@login_required
 def question():
-    global current_question_index
-    if current_question_index < min(len(question_bank), question_limit):
-        question = question_bank[current_question_index]['question']
-        return render_template('question.html', question=question, question_number=current_question_index+1)
-    else:
-        return redirect(url_for('result'))
+    if request.method == 'POST':
+        # Process submitted answers
+        for i in range(5, len(question_bank)):
+            question_bank[i]["answer"] = request.form.get(f"answer_{i}")
 
-@app.route('/answer', methods=['POST'])
-def answer():
-    global current_question_index, score
-    user_answer = request.form['answer']
-    if user_answer.lower() == question_bank[current_question_index]['answer'].lower():
-        score += 1
-    current_question_index += 1
-    return redirect(url_for('question'))
+        # Store answers in the database
+        conn = create_connection("alzheimer_detection.db")
+        if conn is not None:
+            user_id = session.get('user_id')
+            if user_id:
+                for i in range(5, len(question_bank)):
+                    sql_query = f"INSERT INTO CognitiveTest (user_id, question, answer) VALUES (?, ?, ?)"
+                    cursor = conn.cursor()
+                    cursor.execute(sql_query, (user_id, question_bank[i]["question"], question_bank[i]["answer"]))
+                conn.commit()
+                conn.close()
+                flash('Cognitive test completed successfully!')
+                return redirect(url_for('index'))
+            else:
+                flash('User ID not found.')
+        else:
+            flash('Error! Cannot create the database connection.')
 
-@app.route('/result')
-def result():
-    global score
-    if score >= 27:
-        result_message = "You do not have Alzheimer's disease."
-    else:
-        result_message = "You may have Alzheimer's disease. Please consult a doctor for further evaluation."
-    return render_template('result.html', score=score, result_message=result_message)
+    return render_template('questions.html', questions=question_bank)
 
 if __name__ == '__main__':
     app.run(debug=True)

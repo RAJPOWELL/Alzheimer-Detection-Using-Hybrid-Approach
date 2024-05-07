@@ -1,0 +1,245 @@
+3.1 M Sai Teja, K Thanuja, Nadella Mani Deep, P Ravindra Reddy, & O Likhith Kumar Reddy. (2023) [1] in this paper offers a new way of Prediction model to predict AD in patients. In this project we have successfully classified the images of MRI images of a person,
+Mild Demented, Moderate Demented, Nondemented, Very Mild Demented using the deep
+learning algorithms. Here, we have considered the dataset of MRI images which will be of 4
+different types and trained using Modified CNN. VGG16 algorithms. After the training we
+tested by uploading the image and classified it. The technology used are:
+CNN, VG 16 and Alex-Net
+The limitations are as follows:
+Computational Cost of VGG16: VGG16, with its 16 layers, can be computationally
+expensive and memory-intensive, limiting its practicality in resource-constrained
+environments.
+3.2 Oh, K., Chung, YC., Kim, K.W. et al [2] in this paper Thes paper presents a deep learning
+approach for the classification and visualization of Alzheimer's disease using MRI data. The
+authors propose an end-to-end learning method for four binary classification tasks based on
+volumetric convolutional neural networks. They also use a gradient-based visualization
+technique to identify important biomarkers related to Alzheimer's disease and mild cognitive
+impairment. The technology used are CNN, SVM (Support Vector Machines) , RBM
+(Restricted Boltzmann Machine), DBN (Deep Belief Network)
+The limitations are as follows:
+Human Intervention Exclusion: While the study highlights the visualization of CNN
+outcomes without human intervention, it may overlook the importance of human expertise in
+validating and interpreting results, especially in medical contexts.
+3.3 Ayisha Shamna. K K, Jamsheera .K, Shameena .P P[3] in this paper discusses a two
+stage task-oriented deep learning method for anatomical landmark detection and
+Alzheimer's disease diagnosis using limited medical imaging data. The method uses two
+neural networks, local and global operations, to detect landmark points. HOG and longitudinal features are extracted from the landmark points and used with SVM to
+diagnose Alzheimer's disease.
+which shows the landmark point detection and the analysis of HOG and longitudinal
+features. The features are concatenated and used to train SVM for classification tasks..
+The technology used are SVM and CNN
+The limitations are as follows
+Limited Training Data Challenge: The study acknowledges the challenge of
+limited training data, which can adversely affect the performance of deep learning
+models. Deep learning models, especially CNNs, often require large amounts of labeled
+data for effective training, and a scarcity of data can lead to overfitting and reduced
+generalization
+3.4 Raees, P & Thomas, Vinu. (2021) in this paper the disease causes a progressive mental
+deterioration due to brain degeneration, ultimately leading to death. It is the cause of around
+60-70% of dementia cases and affects millions of people globally. Early diagnosis is
+essential for better clinical, social, and economic outcomes. Deep learning algorithms offer
+high accuracy of 80-90% in predicting AD, with Support Vector Machines and different
+models of DNN algorithms tested. Applying highly accurate computational tools will help
+diagnose the disease in its early stages. There are medical treatments in the early stages,
+but the progression of AD is irreversible. The number of people suffering from AD is
+expected to triple by 2050.The technology used are Alex-Net , VGG-16,ResNet-50
+The limitations are as follows:
+Computational Intensity: Deep learning, especially when utilizing GPU acceleration,
+demands significant computational resources, limiting accessibility for researchers with
+constrained hardware
+3.5. Kavitha C., Mani Vinodhini, Srividhya S. R., Khalaf Osamah Ibrahim, Tavera
+Romero Carlos Andrés.[5] in this paper Alzheimer’s is a major health concern, and rather
+than offering a cure, it is more important to reduce risk, provide early intervention, and
+diagnose symptoms early and accurately. As seen in the literature survey there have been a lot
+of efforts made to detect Alzheimer’s Disease with different machine learning algorithms and
+micro-simulation methods; however, it remains a challenging task to identify relevant attributes
+that can detect Alzheimer’s very early. The technology used are as follows Machine Learning
+Algorithms like: -
+Decision Tree, Random Forest, Support Vector Machine, Gradient Boosting, and Voting
+classifiers
+The limitations are as follows :
+There’s no user interface for users to interact with, so it’s difficult for end users to use it.
+3.6Al-Shoukry, Suhad & Rassem, Taha & Makbol, Nasrin. (2020)[6] in this paper
+concentrate on two principal areas: biomarkers and neuroimaging, with a growing emphasis on
+image analysis. Despite being comprehensive and well-executed, the study contributes
+minimally to the early detection of Alzheimer's disease, as most of the selected patients are
+already diagnosed with AD. This study examined essential Alzheimer's disease datasets and
+diagnostic techniques, indicating its suitability for early-stage neuroimaging research. The
+technology used are CNN,XGBOOST,Logistic regression ,SVM
+• The limitations are as follows
+• Black Box Nature: Deep learning models, especially CNNs, are often considered
+"black boxes," making it challenging to interpret how they reach specific conclusions.
+This lack of transparency raises concerns about the reliability and trustworthiness of
+the generated results.
+• Overfitting Issues: ML models, including SVMs and CNNs, may overfit the
+training data, leading to reduced generalization performance on new, unseen data.
+Ensuring robust generalization remains a critical challenge.
+3.7 Sanjay, V & Swarnalatha, P.. (2022)(7) in this paper study provides you with an
+overview of current trend deep learning-based segmentation algorithms for analyzing brain
+Magnetic Resonance Imaging for the treatment of AD. Finally, a conversation on the
+approaches' benefits and drawbacks, as well as future directives, was held, which may help
+researchers better comprehend present algorithms and methods in this field, and eventually
+design new and more successful algorithms. Technology used :CNN, RNN
+The limitations are as follows
+Inter-Model Integration Challenges: Integrating information from various
+models or modalities can be complex, and the lack of a unified framework for
+combining results may hinder the development of a comprehensive and accurate
+diagnostic model.
+3.8 Gamal, Aya & Elattar, Mustafa & Selim, Sahar. (2022)[8] The paper in this PDF file
+explores an automatic early diagnosis of Alzheimer's disease using a 3D deep ensemble
+approach. The proposed architecture is described along with the preprocessing pipeline used,
+which includes a tublet embedding and positional embedding. The evaluation metrics discussed
+include F1-score, which considers precision and recall, and BA, a metric used when classes are
+imbalanced. The study involves the use of a dataset of 789 3D MRI images, with four
+classification tasks investigated: AD vs CN, AD vs MCI, MCI vs CN, and AD vs MCI vs CN.
+The results of this study are discussed and presented, including an ablation study to illustrate
+the effectiveness of each module in the proposed method. Technology used are CNN and
+ROBEX
+The limitations are as follows :
+Black Box Nature: Deep learning models, especially CNNs, are often considered "black
+boxes," making it challenging to interpret how they reach specific conclusions. This lack of
+transparency raises concerns about the reliability and trustworthiness of the generated results.
+3.9 Arsah A1 , Karolin Kiruba R2 , Kishan I3 , Neekitha C4 , Padmapriya[9] in this paper
+focuses on developing a deep learning-based method for feature extraction from segmented
+regions in medical brain MRI images to detect and classify normal and abnormal brain cells,
+specifically targeting Alzheimer's disease. The proposed approach involves collecting and
+preprocessing relevant demographic, lifestyle, and health-related data, selecting appropriate
+machine learning algorithms, and training a neural network as a multi-class classifier to identify
+various stages of Alzheimer's disease. The step-by-step process includes image acquisition,
+data preprocessing, feature extraction, model training using convolutional neural networks
+(CNNs), and classification of brain images. The project aims to improve accuracy compared to
+conventional approaches and leverage machine learning to aid healthcare professionals in early
+detection and prevention of Alzheimer's, ultimately contributing to better health outcomes. The
+technologies used are machine learning algorithms and deep learning algorithms.
+The limitations are :
+False Positives and Negatives:
+The model may produce false positives or false negatives, leading to misdiagnosis or missed
+cases of Alzheimer's disease. Continuous refinement and validation are necessary to minimize
+these errors.
+3.10 Nair Bini Balakrishnan1 , P.S. Sreeja2 , Jisha Jose Panackal3[10] in this paper
+discusses various deep learning (DL) models applied in diagnosing Alzheimer's Disease (AD)
+over the last five years. The key DL models include Deep Neural Networks (DNN),
+Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), Restricted
+Boltzmann Machines (RBM), and Deep Reinforcement Learning (DRL). The Deep Neural
+Network (DNN) is highlighted for its use in AD classification, leveraging configurations akin
+to Multi-Layer Perceptron’s (MLP) with multiple hidden layers. Convolutional Neural
+Networks (CNNs) demonstrate efficacy in both feature extraction and classification for AD
+diagnosis, with studies employing 2D and 3D CNNs. The technology used are Deep Neural
+Networks (DNN): Utilized for Alzheimer's disease classification with configurations similar to
+Multi-Layer Perceptrons (MLP) and more than two layers.
+The Technology used are Convolutional Neural Networks (CNN),Recurrent Neural
+Networks (RNN),Restricted Boltzmann Machines (RBM),Deep Reinforcement
+Learning (DRL) .
+The limiations are as follows :
+The model is tailored specifically for Alzheimer's disease detection. Extending the
+application to other neurological disorders or general cognitive decline might require
+additional training and validation.
+3.11 Sheng Liu1, ArjunV. Masurkar2,3, Henry Rusinek4,5, Jingyun Chen2,4, Ben
+Zhang4, Weicheng Zhu1, Carlos Fernandez‑Granda1,6🖂 & Narges Razavian1,2,4,
+[11] in this paper utilized imaging and diagnosis data from the Alzheimer's Disease
+Neuroimaging Initiative (ADNI) and National Alzheimer’s Coordinating Center (NACC),
+comprising structural MRI scans from 2619 and 2025 participants, respectively. Data
+preprocessing involved bias correction and spatial normalization. A 3D Convolutional Neural
+Network (CNN) was designed for Alzheimer's disease classification, featuring instance normalization, ReLUs, and max-pooling layers. Data augmentation was performed through
+Gaussian blurring and random cropping. The study also employed a traditional ROIvolume/
+thickness model based on Freesurfer segmentation. Quality control procedures were
+implemented for Freesurfer segmentation. Performance metrics, including area under the
+ROC curve (AUC), were calculated, and t-SNE projection was used for data visualization.
+The technology used are
+Technology Used:
+Data Sources:
+1. Alzheimer's Disease Neuroimaging Initiative (ADNI)
+2. National Alzheimer’s Coordinating Center (NACC)
+Data Processing: Structural MRI scans, Unifed Segmentation procedure, Free surfer outputs,
+Montreal Neurological Institute (MNI) template normalization
+Deep Learning Model:3D Convolutional Neural Network (CNN),Instance
+normalization, ReLUs (Rectified Linear Units),Max-pooling layer, Data augmentation
+(Gaussian blurring, random cropping, NVIDIA CUDA parallel computing platform
+,Py Torch deep learning framework, Traditional ROI-based Model ,Gradient Boosting
+classifier, Python Sklearn package for machine learning
+The limitations are as follows :
+Dependency on Imaging Data:
+The project heavily relies on structural MRI data, which might not be readily available or
+feasible for routine screening in all healthcare settings. Consideration should be given to the
+accessibility and cost-effectiveness of the imaging modality
+3.12 Alroobaea, Roobaea & Mechti, Seifeddine & Haoues, Mariem & Rubaiee, Saeed &
+Ahmed, Anas & Andejany, Murad & Bragazzi, Nicola & Sharma, Dilip & Kolla, Bhanu
+& Sengan, Sudhakar. (2021)[12] in this paper discusses a research study about Alzheimer's
+disease detection using machine learning techniques. The study uses data from the Alzheimer’s
+Disease Neuroimaging Initiative (ADNI) and the Open Access Series of Imaging Studies
+(OASIS) brain datasets. The objective of the study is to introduce a computer-aided diagnosis
+system for Alzheimer's disease detection. A comparative study to evaluate how well supervised
+machine learning models can be used in Alzheimer’s disease prediction showed that different
+models have been commonly used. The technologies used are Logistic Regression, Support
+Vector Machines (SVM), Artificial Neural Networks (ANN)
+The limitations are as follows
+Limited Explainability:
+While logistic regression provides a more interpretable model, other techniques like support
+vector machines and artificial neural networks may lack transparency. Understanding the
+reasoning behind model predictions is crucial in a medical context for gaining trust from
+healthcare professionals and patients.
+3.13 Lee Kuok Leong1 and Azian Azamimi Abdullah1[13] in this paper The research
+workflow for this project, as illustrated, involves several key steps. Firstly, data acquisition
+utilizes MRI data from the Open Access Series of Imaging Studies (OASIS) project,
+particularly the OASIS-1 cross-sectional and OASIS-2 longitudinal datasets. Data
+preprocessing involves handling missing values through various alternatives, and Boruta
+algorithm is employed as a feature selection method. The supervised machine learning methods
+applied include Deep Neural Network (DNN), Random Forest (RF), Gradient Boosting
+Machines (GBM), Support Vector Machine (SVM), and Logistic Regression (LR), each with
+specific parameters and tuning approaches. The technology used are Tensor flow, Scikitlearn,
+NVIDIA CUDA Toolkit ,Regression
+The limitations are
+Data Dependency:
+The effectiveness of supervised machine learning models heavily relies on the quality and
+representativeness of the training data. Biases or inadequacies in the dataset may lead to
+suboptimal model performance and generalization issues
+3.14 Muhanad Tahrir Younis1 , Younus Tahreer Younus 2 , Jamal Naser Hasoon1 , Ali
+Hussain Fadhil3 , Salama A. Mostafa4 [14] in this paper utilizes a deep learning
+Convolutional Neural Network (CNN) model for accurate Alzheimer's disease detection. The
+CNN model comprises eight two-dimensional convolutional layers, three max-pooling layers,
+and five dense (fully-connected) layers. The model takes brain MRI images resized to 224x224
+as input, and through convolutional layer it extracts features followed by max-pooling layers
+for down sampling. Dense layers enable classification using discriminative features, and a soft
+max activation layer categorizes images into four classes
+The technology used are 
+Convolutional Neural Network (CNN),Deep Learning Libraries
+The limtations are as follows
+Data and Generalization Challenges:
+The methodology might face challenges related to the quality and generalization of the dataset.
+Biases or specific characteristics in the dataset might affect the model's performance, and
+ensuring robustness across diverse datasets could be a potential drawback.
+3.15 Odusami, M.; Maskeliunas, ̄ R.; Damaševiˇcius, R [15]In this paper introduces an
+innovative approach to advance the early diagnosis of Alzheimer's disease (AD) by employing
+deep learning techniques on magnetic resonance imaging (MRI) data. Given the increasing
+significance of AD as a leading cause of mortality, the timely identification of patients with
+Mild Cognitive Impairment (MCI), a precursor to AD, becomes pivotal for effective
+intervention. The authors present a hybrid model that capitalizes on pre-trained convolutional
+neural networks (CNNs), specifically ResNet18 and DenseNet121, for feature extraction from
+brain MRI images. A distinctive contribution lies in the randomized concatenation of deep
+features, where high-level features from ResNet18 and DenseNet121 are combined and
+subjected to weight randomization to enhance classification accuracy.
+The Technology Used:
+Deep Learning Models:ResNet18,DenseNet121Weight Randomization Technique:.
+Gradient-Weighted Class Activation Map (Grad-CAM):
+The limitaions are as follows
+Transferability Concerns:
+The application of pre-trained models, such as ResNet18 and DenseNet121, raises concerns
+about the transferability of features learned from different datasets. The performance of the
+model may vary when applied to datasets that significantly differ from the original training
+data.
+3.16 A, Shiny & S .S, Suganyadevi & Rajasekaran, Arun & P, Satheesh & R, Suganthi &
+Ramalingam, Naveenkumar. (2023).[16].
+In this paper study involved data acquisition, preprocessing, and the application of deep
+learning techniques, particularly Convolutional Neural Networks (CNNs) and the LeNet-5
+model, for Alzheimer's disease (AD) diagnosis. The dataset comprised 15 senior normal control
+subjects and 30 female AD patients selected from a Kaggle dataset, with specific criteria for normalcy and AD diagnosis. Preprocessing steps included the use of the Brain Extraction Tool
+for structural data, skull-stripping, motion correction, spatial smoothing, and high-pass
+temporal filtering into the application of deep learning, emphasizing hierarchical and structured
+learning inspired by the human brain's neocortex.
+The technology used are
+Smoothing (Gaussian Kernel),High-Pass Temporal Filter
+Montreal Neurological Institute Standard Space (MNI152Convolutional Neural Networks
+(CNNs).,LeNet-5 Model.
+The limitations are
+Neural Network Architecture Choice: The study chooses the LeNet-5 model without
+thoroughly exploring or justifying why this architecture is the most suitable for Alzheimer’s
+disease diagnosis compared to other state-of-the-art architecture

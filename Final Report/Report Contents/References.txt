@@ -1,0 +1,55 @@
+[1] M Sai Teja, K Thanuja, Nadella Mani Deep, P Ravindra Reddy, & O Likhith Kumar Reddy.
+(2023). Prediction and Analysis of Alzheimer’s Disease using Deep Learning Algorithms.
+International Journal of Computational Learning & Intelligence, 2(2), 48–57.
+https://doi.org/10.5281/zenodo.7920940
+[2] Oh, K., Chung, YC., Kim, K.W. et al. Classification and Visualization of Alzheimer’s
+Disease using Volumetric Convolutional Neural Network and Transfer Learning. Sci Rep 9,
+18150 (2019).
+https://doi.org/10.1038/s41598-019-54548-6
+[3] Ayisha Shamna .K K, Jamsheera .K, Shameena .P P. CNN Based Landmark Detection and
+Alzheimer’s Diagnosis Using Landmark Feature, International Journal of Advance Research,
+Ideas and Innovations inTechnology, www.IJARIIT.com.
+[4] Raees, P & Thomas, Vinu. (2021). Automated detection of Alzheimer’s Disease using Deep
+Learning in MRI. Journal of Physics: Conference Series. 1921. 012024. 10.1088/1742-
+6596/1921/1/012024.
+[5] Kavitha C., Mani Vinodhini, Srividhya S. R., Khalaf Osamah Ibrahim, Tavera Romero
+Carlos Andrés. "Early-Stage Alzheimer's Disease Prediction Using Machine Learning
+Models." Frontiers in Public Health, 10 (2022),
+https://www.frontiersin.org/articles/10.3389/fpubh.2022.853294,
+DOI:10.3389/fpubh.2022.853294, ISSN: 2296-2565.
+[6] Al-Shoukry, Suhad & Rassem, Taha & Makbol, Nasrin. (2020). Alzheimer’s Diseases
+Detection by Using Deep Learning Algorithms: A Mini-Review. IEEE Access. PP. 1-1.
+10.1109/ACCESS.2020.2989396
+[7] Sanjay, V & Swarnalatha, P.. (2022). Deep Learning Techniques for Early Detection of
+Alzheimer’s Disease: A Review. International Journal of Electrical and Electronics Research.
+10. 899-905. 10.37391/ijeer.100425.
+[8] Gamal, Aya & Elattar, Mustafa & Selim, Sahar. (2022). Automatic Early Diagnosis of
+Alzheimer’s Disease Using 3D Deep Ensemble Approach. IEEE Access. PP. 1-1.
+10.1109/ACCESS.2022.3218621
+[9] Arsah A1 , Karolin Kiruba R2 , Kishan I3 , Neekitha C4 , Padmapriya M5 International
+Journal for Research in Applied Science & Engineering Technology (IJRASET) ISSN: 2321-
+9653; IC Value: 45.98; SJ Impact Factor: 7.538 Volume 11 Issue V May 2023
+[10] Nair Bini Balakrishnan1 , P.S. Sreeja2 , Jisha Jose Panackal3 Alzheimer’s Disease
+Diagnosis using Machine Learning: A Review Volume 71 Issue 3, 120-129, March 2023 ISSN:
+2231 – 5381 / https://doi.org/10.14445/22315381/IJETT-V71I3P213
+[11] Sheng Liu1, ArjunV. Masurkar2,3, Henry Rusinek4,5, Jingyun Chen2,4, Ben Zhang4,
+Weicheng Zhu1, Carlos Fernandez‑Granda1,6🖂 & Narges Razavian1,2,4, “Generalizable
+deep learning model for early Alzheimer’s disease detection from structural MRIs” (2022)
+12:17106 | https://doi.org/10.1038/s41598-022-20674-x
+[12] Alroobaea, Roobaea & Mechti, Seifeddine & Haoues, Mariem & Rubaiee, Saeed &
+Ahmed, Anas & Andejany, Murad & Bragazzi, Nicola & Sharma, Dilip & Kolla, Bhanu &
+Sengan, Sudhakar. (2021). Alzheimer's Disease Early Detection Using Machine Learning
+Techniques. 10.21203/rs.3.rs-624520/v1.
+[13] Lee Kuok Leong1 and Azian Azamimi Abdullah1 “Prediction of Alzheimer’s disease
+(AD) Using Machine Learning Techniques with Boruta Algorithm as Feature Selection
+Method” IOP Publishing doi:10.1088/1742-6596/1372/1/012065
+[14] Muhanad Tahrir Younis1 , Younus Tahreer Younus 2 , Jamal Naser Hasoon1 , Ali Hussain
+Fadhil3 , Salama A. Mostafa4 “An accurate Alzheimer's disease detection using a developed
+convolutional neural network model” Vol. 11, No. 4, August, pp. 2005~2012 ISSN: 2302-
+9285, DOI: 10.11591/eei.v11i4.3659
+[15] Citation: Odusami, M.; Maskeliunas, ̄ R.; Damaševiˇcius, R. An Intelligent System for
+Early Recognition of Alzheimer’s Disease Using Neuroimaging. Sensors 2022, 22, 740.
+https://doi.org/10.3390/s22030740
+[16] A, Shiny & S .S, Suganyadevi & Rajasekaran, Arun & P, Satheesh & R, Suganthi &
+Ramalingam, Naveenkumar. (2023). Alzheimer’s Disease Diagnosis using Deep Learning
+Approach. 1205-1209. 10.1109/ICEARS56392.2023.10085017.

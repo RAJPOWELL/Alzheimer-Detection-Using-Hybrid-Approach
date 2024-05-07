@@ -1,0 +1,16 @@
+The SQLite database used in the Alzheimer's project serves as a crucial component for managing and organizing key entities and relationships within the system. This database design facilitates data storage and retrieval, ensuring efficient handling of user information, MRI data, cognitive test results, and administrative functionalities.
+
+The database schema comprises several entity tables that encapsulate distinct aspects of the project:
+
+Admin Table:
+This table stores administrative user information, including an admin_id (primary key), username, password, and email. Each entry represents a unique administrative user who has access to system management features.
+User Table:
+The User table manages user credentials and profiles. It includes attributes such as user_id (primary key), username, password, and email. Each record corresponds to a registered user in the system.
+MRI Table:
+The MRI table stores MRI data associated with each user. It tracks mri_id (primary key), user_id (foreign key referencing User), and image_data (BLOB). This table facilitates the storage and retrieval of MRI images linked to specific users.
+CognitiveTest Table:
+This table records cognitive test results conducted for users. It includes attributes like test_id (primary key), user_id (foreign key referencing User), date_taken, and score. The CognitiveTest table enables the tracking of cognitive assessment outcomes over time.
+The entity relationships in the SQLite database are defined through foreign key constraints:
+
+The MRI table has a foreign key constraint (user_id) that references the User table's user_id. This relationship links each MRI record to a specific user.
+Similarly, the CognitiveTest table establishes a relationship with the User table via the user_id foreign key. This linkage associates cognitive test results with corresponding users.
